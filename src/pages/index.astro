@@ -1,0 +1,90 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Dinithi Studio | Creative Strategist"
+			description="Creative strategy, SEO content, and website copy for brands that want clearer messaging, stronger structure, and long-term growth."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main style="max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem;">
+			<section style="margin-bottom: 4rem;">
+				<p style="font-size: 0.95rem; margin-bottom: 0.75rem;">Dinithi Studio</p>
+				<h1 style="font-size: 2.8rem; line-height: 1.1; margin-bottom: 1rem;">
+					Creative strategy, SEO content, and web copy built for clarity and growth.
+				</h1>
+				<p style="font-size: 1.1rem; max-width: 720px; line-height: 1.7; margin-bottom: 1.5rem;">
+					I help brands sharpen their message, structure content strategically, and create websites and blogs that feel clear, human, and commercially focused.
+				</p>
+
+				<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+					<a
+						href="/contact"
+						style="padding: 0.9rem 1.2rem; border: 1px solid #111; text-decoration: none; color: inherit;"
+					>
+						Work with me
+					</a>
+					<a
+						href="/blog"
+						style="padding: 0.9rem 1.2rem; border: 1px solid #111; text-decoration: none; color: inherit;"
+					>
+						Read the blog
+					</a>
+				</div>
+			</section>
+
+			<section style="margin-bottom: 4rem;">
+				<h2 style="font-size: 1.8rem; margin-bottom: 1rem;">What I do</h2>
+				<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem;">
+					<div style="border: 1px solid #ddd; padding: 1.25rem;">
+						<h3 style="margin-bottom: 0.75rem;">SEO Content</h3>
+						<p style="line-height: 1.7;">
+							Blog content, service pages, and content systems designed to support search visibility and user intent.
+						</p>
+					</div>
+					<div style="border: 1px solid #ddd; padding: 1.25rem;">
+						<h3 style="margin-bottom: 0.75rem;">Website Copy</h3>
+						<p style="line-height: 1.7;">
+							Clear, conversion-focused messaging for brands that need stronger positioning and better page structure.
+						</p>
+					</div>
+					<div style="border: 1px solid #ddd; padding: 1.25rem;">
+						<h3 style="margin-bottom: 0.75rem;">Content Strategy</h3>
+						<p style="line-height: 1.7;">
+							Content planning grounded in audience pain points, search behaviour, and commercial goals.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section style="margin-bottom: 4rem;">
+				<h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Selected work</h2>
+				<p style="max-width: 720px; line-height: 1.7; margin-bottom: 1rem;">
+					I’ve worked across legal, digital marketing, trades, finance, jewellery, tourism, and service-based brands, helping businesses improve how they sound, rank, and convert.
+				</p>
+				<a href="/portfolio" style="text-decoration: underline; color: inherit;">View portfolio</a>
+			</section>
+
+			<section>
+				<h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Start with a clear message</h2>
+				<p style="max-width: 720px; line-height: 1.7; margin-bottom: 1.5rem;">
+					A good website should do more than fill space. It should help people understand what you do, why it matters, and why they should trust you.
+				</p>
+				<a
+					href="/contact"
+					style="padding: 0.9rem 1.2rem; border: 1px solid #111; text-decoration: none; color: inherit;"
+				>
+					Get in touch
+				</a>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

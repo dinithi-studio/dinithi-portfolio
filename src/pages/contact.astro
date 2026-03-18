@@ -1,0 +1,48 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Contact | Dinithi Studio"
+			description="Get in touch with Dinithi Studio for SEO content, website copy, and content strategy services."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main style="max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem;">
+			<h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Contact</h1>
+			<p style="line-height: 1.8; margin-bottom: 2rem;">
+				Have a project in mind? Send a message and I’ll get back to you.
+			</p>
+
+			<form name="contact" method="POST" data-netlify="true" style="display: grid; gap: 1rem;">
+				<input type="hidden" name="form-name" value="contact" />
+
+				<label>
+					Name<br />
+					<input type="text" name="name" required style="width: 100%; padding: 0.75rem; margin-top: 0.35rem;" />
+				</label>
+
+				<label>
+					Email<br />
+					<input type="email" name="email" required style="width: 100%; padding: 0.75rem; margin-top: 0.35rem;" />
+				</label>
+
+				<label>
+					Message<br />
+					<textarea name="message" rows="6" required style="width: 100%; padding: 0.75rem; margin-top: 0.35rem;"></textarea>
+				</label>
+
+				<button type="submit" style="width: fit-content; padding: 0.9rem 1.2rem; border: 1px solid #111; background: white; cursor: pointer;">
+					Send message
+				</button>
+			</form>
+		</main>
+		<Footer />
+	</body>
+</html>
