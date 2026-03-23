@@ -1,24 +1,85 @@
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
+	font-family: system-ui, -apple-system, sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	background: #f7f3ee;
+	color: #2b2a28;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.container {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 2rem;
 }
 
-h2 {
-  margin-top: 40px;
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 a {
-  display: inline-block;
-  margin-top: 10px;
-  color: black;
-  text-decoration: none;
-  border-bottom: 1px solid black;
+  color: inherit;
+}
+
+section {
+	padding: 5rem 0;
+}
+
+section.tight {
+	padding: 3.5rem 0;
+}
+
+h1 {
+	font-size: 3.2rem;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+}
+
+h2 {
+	font-size: 2.2rem;
+	line-height: 1.2;
+}
+
+p {
+	max-width: 520px;
+	font-size: 0.95rem;
+	color: #5f5a54;
+}
+
+.button-primary {
+	background: #2b2a28;
+	color: white;
+	padding: 0.65rem 1.2rem;
+	font-size: 0.85rem;
+	border: none;
+	cursor: pointer;
+}
+
+.button-secondary {
+	border: 1px solid #2b2a28;
+	color: #2b2a28;
+	padding: 0.65rem 1.2rem;
+	font-size: 0.85rem;
+	background: transparent;
+}
+
+.card,
+.about-image,
+.hero-visual {
+	border-radius: 2px;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+:root {
+	--bg: #f7f3ee;
+	--text: #2b2a28;
+	--muted: #6d675f;
+	--accent-green: #6f836f;
+	--beige: #d9c7b6;
+	--soft-green: #aebfb1;
+	--yellow: #e2c874;
 }
