@@ -120,7 +120,7 @@ import Header from '../components/Header.astro';
 								</div>
 								<div class="case-card-face case-card-hover">
 									<p>Repositioned a crypto accounting firm into a focused B2B brand</p>
-									<span class="case-card-cta">View Case Study</span>
+									<span class="case-card-cta">View Case Study →</span>
 								</div>
 							</div>
 						</a>
@@ -134,7 +134,7 @@ import Header from '../components/Header.astro';
 								</div>
 								<div class="case-card-face case-card-hover">
 									<p>Refined service page messaging to improve clarity, structure, and conversion</p>
-									<span class="case-card-cta">View Case Study</span>
+									<span class="case-card-cta">View Case Study →</span>
 								</div>
 							</div>
 						</a>
@@ -148,7 +148,7 @@ import Header from '../components/Header.astro';
 								</div>
 								<div class="case-card-face case-card-hover">
 									<p>Built a structured content system targeting high-intent legal search queries</p>
-									<span class="case-card-cta">View Case Study</span>
+									<span class="case-card-cta">View Case Study →</span>
 								</div>
 							</div>
 						</a>
@@ -162,7 +162,7 @@ import Header from '../components/Header.astro';
 								</div>
 								<div class="case-card-face case-card-hover">
 									<p>Created a high-intent service page designed to convert search traffic into enquiries</p>
-									<span class="case-card-cta">View Case Study</span>
+									<span class="case-card-cta">View Case Study →</span>
 								</div>
 							</div>
 						</a>
@@ -690,6 +690,16 @@ import Header from '../components/Header.astro';
 .case-card-default {
 	opacity: 1;
 	transform: translateY(0);
+	<span class="case-card-hint">Explore →</span>
+}
+
+.case-card-hint {
+	display: none;
+	font-size: 0.7rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	opacity: 0.6;
+	margin-top: 0.8rem;
 }
 
 .case-card-hover {
@@ -756,12 +766,32 @@ import Header from '../components/Header.astro';
 }
 
 @media (max-width: 720px) {
+
+	.case-card-hint {
+		display: block;
+	}
+
+	.case-card-inner {
+		box-shadow: 0 6px 16px rgba(43, 42, 40, 0.05);
+	}
+
+	.case-card-inner {
+		animation: cardFloat 3s ease-in-out infinite;
+	}
+
+	@keyframes cardFloat {
+		0% { transform: translateY(0); }
+		50% { transform: translateY(-2px); }
+		100% { transform: translateY(0); }
+	}
+
 	.case-grid {
 		grid-template-columns: 1fr;
 	}
 
 	.case-card-inner {
 		min-height: 280px;
+		cursor: pointer;
 	}
 
 	.case-card-default p {
@@ -796,6 +826,10 @@ import Header from '../components/Header.astro';
 		transform: translateY(-2px) scale(1.005);
 		box-shadow: 0 16px 30px rgba(43, 42, 40, 0.08);
 		filter: brightness(0.995);
+	}
+
+	.case-card.is-revealed .case-card-inner::before {
+		border-color: rgba(255, 255, 255, 0.34);
 	}
 }
 
