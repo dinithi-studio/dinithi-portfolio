@@ -639,6 +639,34 @@ import Header from '../components/Header.astro';
 	cursor: pointer;
 }
 
+.case-card-default {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start; /* Make sure it's at the top of the card */
+	gap: 0.8rem;  /* Adds space between title and "Explore" text */
+}
+
+.case-card-hint {
+	position: static;
+	font-size: 0.72rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	opacity: 0.5;
+	color: var(--text);
+	margin-top: 0.8rem;  /* Ensures it's below the title */
+}
+
+.case-card-default p {
+	margin: 0;
+	font-size: 1.35rem;
+	line-height: 1.4;
+	letter-spacing: -0.02em;
+	color: var(--text);
+	font-weight: 500;
+	max-width: 11ch;
+}
+
 .case-card-inner {
 	position: relative;
 	display: grid;
@@ -691,37 +719,14 @@ import Header from '../components/Header.astro';
 	transition: opacity 0.24s ease, transform 0.24s ease;
 }
 
-.case-card-default {
-	opacity: 1;
-	transform: translateY(0);
-}
 
-.case-card-hint {
-	display: none;
-	position: absolute;
-	bottom: 16px;
-	left: 50%;
-	transform: translateX(-50%);
-	font-size: 0.7rem;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	opacity: 0.55;
-}
 
 .case-card-hover {
 	opacity: 0;
 	transform: translateY(8px);
 }
 
-.case-card-default p {
-	margin: 0;
-	font-size: 1.45rem;
-	line-height: 1.12;
-	letter-spacing: -0.03em;
-	color: var(--text);
-	font-weight: 500;
-	max-width: 11ch;
-}
+
 
 .case-card-hover p {
 	margin: 0;
@@ -773,18 +778,24 @@ import Header from '../components/Header.astro';
 
 @media (max-width: 720px) {
 
-	.case-card-hint {
-		display: block;
-	}
-
 	.case-card-inner {
 		box-shadow: 0 6px 16px rgba(43, 42, 40, 0.05);
-	}
-
-	.case-card-inner {
 		animation: cardFloat 3s ease-in-out infinite;
+    	transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 	}
 
+		.case-card.is-revealed .case-card-default {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+
+		.case-card.is-revealed .case-card-hover {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	
+
+	
 	@keyframes cardFloat {
 		0% { transform: translateY(0); }
 		50% { transform: translateY(-2px); }
@@ -799,12 +810,49 @@ import Header from '../components/Header.astro';
 		min-height: 280px;
 		cursor: pointer;
 	}
+	
 
-	.case-card-default p {
-		font-size: 1.2rem;
+	.case-card-hover {
+		opacity: 0;
+		transform: translateY(8px);
+		pointer-events: none;
 	}
 
-	/* mobile default state */
+	/* mobile tap-reveal state */
+	.case-card.is-revealed .case-card-default {
+		opacity: 0;
+		transform: translateY(-8px);
+	}
+
+	.case-card.is-revealed .case-card-hover {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+
+	.case-card.is-revealed .case-card-inner {
+		transform: translateY(-2px) scale(1.005);
+		box-shadow: 0 16px 30px rgba(43, 42, 40, 0.08);
+		filter: brightness(0.995);
+	}
+
+	.case-card.is-revealed .case-card-inner::before {
+		border-color: rgba(255, 255, 255, 0.34);
+	}
+
+
+
+.case-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.case-card-inner {
+		min-height: 280px;
+		cursor: pointer;
+		box-shadow: 0 6px 16px rgba(43, 42, 40, 0.05);
+		transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+	}
+
 	.case-card-default {
 		opacity: 1;
 		transform: translateY(0);
@@ -841,24 +889,19 @@ import Header from '../components/Header.astro';
 
 
 
-.featured-work-actions {
-	display: flex;
-	justify-content: center;
-	gap: 0.9rem;
-	flex-wrap: wrap;
-	margin-top: 2rem;
-}
-
-
-
-
-
-
-
 	.center-cta {
 		text-align: center;
 		margin-top: 2.5rem;
 	}
+
+	.featured-work-actions {
+	display: flex;
+	justify-content: center;   /* center horizontally */
+	align-items: center;       /* align nicely */
+	gap: 1rem;
+	margin-top: 3.5rem;
+	width: 100%;              /* ensures full width */
+}
 
 	.services-band {
 		padding: 5.5rem 0;
