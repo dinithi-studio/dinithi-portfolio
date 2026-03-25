@@ -110,50 +110,66 @@ import Header from '../components/Header.astro';
 						<h2>Featured Work</h2>
 					</div>
 
-					<div class="work-grid">
-	<a href="/portfolio" class="work-card featured">
-		<div class="work-thumb thumb-1"></div>
-		<h3>SEO Content Systems</h3>
-		<p>Service pages, blogs, and content structures designed around search behaviour.</p>
-	</a>
+					<div class="case-grid">
+						<a href="/portfolio/onchain-case-study" class="case-card case-card-1">
+							<div class="case-card-inner">
+								<div class="case-card-face case-card-default">
+									<p>
+										Brand Positioning
+									</p>
+								</div>
+								<div class="case-card-face case-card-hover">
+									<p>Repositioned a crypto accounting firm into a focused B2B brand</p>
+									<span class="case-card-cta">View Case Study</span>
+								</div>
+							</div>
+						</a>
 
-	<div class="work-side-stack">
-		<a href="/portfolio" class="work-card">
-			<div class="work-thumb thumb-2"></div>
-			<h3>Website Copy & Restructuring</h3>
-			<p>Clearer messaging, stronger hierarchy, and better user flow across core pages.</p>
-		</a>
+						<a href="/portfolio/at-digital-case-study" class="case-card case-card-2">
+							<div class="case-card-inner">
+								<div class="case-card-face case-card-default">
+									<p>
+										Webcopy Messaging Strategy
+									</p>
+								</div>
+								<div class="case-card-face case-card-hover">
+									<p>Refined service page messaging to improve clarity, structure, and conversion</p>
+									<span class="case-card-cta">View Case Study</span>
+								</div>
+							</div>
+						</a>
 
-		<a href="/portfolio" class="work-card">
-			<div class="work-thumb thumb-3"></div>
-			<h3>Brand Messaging Support</h3>
-			<p>Sharper language and positioning for brands that need more clarity and consistency.</p>
-		</a>
-	</div>
+						<a href="/portfolio/legal-content-strategy-case-study" class="case-card case-card-3">
+							<div class="case-card-inner">
+								<div class="case-card-face case-card-default">
+									<p>
+										SEO Content Strategy
+									</p>
+								</div>
+								<div class="case-card-face case-card-hover">
+									<p>Built a structured content system targeting high-intent legal search queries</p>
+									<span class="case-card-cta">View Case Study</span>
+								</div>
+							</div>
+						</a>
 
-	<div class="work-bottom-grid">
-		<a href="/portfolio" class="work-card">
-			<div class="work-thumb thumb-4"></div>
-			<h3>SEO-Led Content Planning</h3>
-			<p>Content mapped to audience intent, commercial goals, and long-term visibility.</p>
-		</a>
-
-		<a href="/portfolio" class="work-card">
-			<div class="work-thumb thumb-5"></div>
-			<h3>Local Service Content</h3>
-			<p>Location-driven pages built to support local search while still sounding human.</p>
-		</a>
-
-		<a href="/portfolio" class="work-card">
-			<div class="work-thumb thumb-6"></div>
-			<h3>Content Strategy for Growth</h3>
-			<p>Structured thinking for brands that want content to support growth, not just output.</p>
-		</a>
-	</div>
-</div>
-
-					<div class="center-cta">
-						<a href="/portfolio" class="btn btn-secondary">See full portfolio</a>
+						<a href="/portfolio/legal-service-page-case-study" class="case-card case-card-4">
+							<div class="case-card-inner">
+								<div class="case-card-face case-card-default">
+									<p>
+										Conversion-Focused Content
+									</p>
+								</div>
+								<div class="case-card-face case-card-hover">
+									<p>Created a high-intent service page designed to convert search traffic into enquiries</p>
+									<span class="case-card-cta">View Case Study</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="featured-work-actions">
+						<a href="/portfolio" class="btn btn-primary">View portfolio</a>
+						<a href="/contact" class="btn btn-secondary">Work with me</a>
 					</div>
 				</div>
 			</section>
@@ -527,7 +543,7 @@ import Header from '../components/Header.astro';
 	}
 
 	.section-heading {
-		margin-bottom: 2.5rem;
+		margin-bottom: 2rem;
 	}
 
 	.section-heading.centered {
@@ -546,6 +562,11 @@ import Header from '../components/Header.astro';
 		max-width: none;
 	}
 
+	.featured-work .section-heading h2 {
+	font-size: clamp(2rem, 3.2vw, 3rem);
+	max-width: none;
+}
+
 	.section-title {
 		font-size: 1.9rem;
 		margin-top: 0.3rem;
@@ -562,160 +583,173 @@ import Header from '../components/Header.astro';
 		padding-top: 3.5rem;
 	}
 
-/*.work-grid {
-		display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2rem;
-	margin-top: 2.4rem;
-}
-
-.work-card.featured {
-	grid-column: 1 / span 2;
-}
-
-.work-card.featured .work-thumb {
-	aspect-ratio: 16 / 9;
-	min-height: 0;
-	height: auto;
-}
-
-.work-card.featured h3 {
-	font-size: 1rem;
-}*/
-
-
-/*.work-grid {
+.case-grid {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 2rem;
-	margin-top: 2.25rem;
-}*/
-
-.work-grid {
-	display: grid;
-	grid-template-columns: 1.65fr 1fr;
-	gap: 2rem;
-	align-items: stretch;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.75rem;
+	margin-top: 2rem;
 }
 
-.work-card.featured {
-	height: 100%;
-}
-
-.work-side-stack {
-	display: grid;
-	grid-template-rows: 1fr 1fr;
-	gap: 1.4rem;
-	height: 100%;
-}
-
-.work-side-stack .work-card {
-	height: 100%;
-}
-
-.work-bottom-grid {
-	grid-column: 1 / -1;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2rem;
-}
-
-
-
-.work-card {
+.case-card {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 	text-decoration: none;
 	color: inherit;
+	cursor: pointer;
 }
 
-.work-thumb {
-	margin-bottom: 0.6rem;
+.case-card-inner {
+	position: relative;
+	display: grid;
+	place-items: center;
+	min-height: 320px;
+	padding: 1.75rem;
+	overflow: hidden;
+	box-shadow: 0 8px 20px rgba(43, 42, 40, 0.04);
+	transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
-.work-card h3 {
-	margin-bottom: 1.02rem;
+.case-card-inner::before {
+	content: "";
+	position: absolute;
+	inset: 14px;
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	pointer-events: none;
 }
 
-.work-card p {
-	margin-top: auto; /* THIS fixes alignment */
-	font-size: 0.84rem;
-	line-height: 1.6;
-	max-width: 28ch;
-	min-height: 48px;
+.case-card-inner::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0)),
+		radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 35%);
+	pointer-events: none;
 }
 
-.work-thumb {
-	width: 100%;
-	min-height: 180px;
-	aspect-ratio: 4 / 3;
-	border-radius: 2px;
-	box-shadow: 0 10px 26px rgba(43, 42, 40, 0.06);
-	transition: transform 0.25s ease, box-shadow 0.25s ease;
+.case-card-1 .case-card-inner {
+	background: linear-gradient(135deg, #b09079, #d4beac);
 }
 
-.work-card.featured .work-thumb {
-	aspect-ratio: 16 / 9.5;
+.case-card-2 .case-card-inner {
+	background: linear-gradient(135deg, #d3dbd0, #bcc7bb);
 }
 
-.work-card.featured h3 {
-	font-size: 1rem;
-	max-width: 20ch;
+.case-card-3 .case-card-inner {
+	background: linear-gradient(135deg, #e6d284, #d5bf5d);
 }
 
-.work-card.featured p {
-	max-width: 32ch;
+.case-card-4 .case-card-inner {
+	background: linear-gradient(135deg, #dbd4cb, #c4cbc0);
 }
 
-.work-card:hover .work-thumb {
-	transform: translateY(-4px);
-	box-shadow: 0 18px 36px rgba(43, 42, 40, 0.1);
+.case-card-face {
+	grid-area: 1 / 1;
+	text-align: center;
+	max-width: 22ch;
+	transition: opacity 0.24s ease, transform 0.24s ease;
 }
 
-.work-card h3 {
-	font-size: 1rem;
+.case-card-default {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.case-card-hover {
+	opacity: 0;
+	transform: translateY(8px);
+}
+
+.case-card-default p {
 	margin: 0;
-	font-weight: bold;
-	line-height: 1.3;
+	font-size: 1.45rem;
+	line-height: 1.12;
+	letter-spacing: -0.03em;
+	color: var(--text);
+	font-weight: 500;
+	max-width: 11ch;
+}
+
+.case-card-hover p {
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.45;
+	color: var(--text);
 	max-width: 22ch;
 }
 
-.work-card:hover h3 {
-	text-decoration: underline;
-	text-underline-offset: 0.2em;
+.case-card-cta {
+	display: inline-block;
+	margin-top: 1rem;
+	font-size: 0.76rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text);
+	border-bottom: 1px solid currentColor;
+	padding-bottom: 0.12rem;
 }
 
-.work-card p {
-	font-size: 0.8rem;
-	line-height: 1.55;
-	color: #5d5d5d;
-	margin: 0;
-	max-width: 30ch;
+.case-card:hover .case-card-inner,
+.case-card:focus-visible .case-card-inner {
+	transform: translateY(-2px) scale(1.005);
+	box-shadow: 0 16px 30px rgba(43, 42, 40, 0.08);
+	filter: brightness(0.995);
 }
 
-.thumb-1 { background: linear-gradient(135deg, #8b6b57, #e7d7c8); }
-.thumb-2 { background: linear-gradient(135deg, #d9dfd7, #b9c7b7); }
-.thumb-3 { background: linear-gradient(135deg, #f1e3b2, #d8c15f); }
-.thumb-4 { background: linear-gradient(135deg, #eadfd3, #d3c2b6); }
-.thumb-5 { background: linear-gradient(135deg, #e8d8c6, #f8f3ec); }
-.thumb-6 { background: linear-gradient(135deg, #dad6cf, #c2cabe); }
+.case-card:hover .case-card-default,
+.case-card:focus-visible .case-card-default {
+	opacity: 0;
+	transform: translateY(-8px);
+}
 
-@media (max-width: 980px) {
-	.work-grid {
-		grid-template-columns: 1fr;
-	}
+.case-card:hover .case-card-hover,
+.case-card:focus-visible .case-card-hover {
+	opacity: 1;
+	transform: translateY(0);
+}
 
-	.work-bottom-grid {
-		grid-template-columns: 1fr 1fr;
-	}
+.case-card:focus-visible {
+	outline: none;
+}
+
+.case-card:focus-visible .case-card-inner {
+	box-shadow:
+		0 18px 36px rgba(43, 42, 40, 0.1),
+		0 0 0 2px rgba(43, 42, 40, 0.18);
 }
 
 @media (max-width: 720px) {
-	.work-bottom-grid {
+	.case-grid {
 		grid-template-columns: 1fr;
 	}
+
+	.case-card-inner {
+		min-height: 280px;
+	}
+
+	.case-card-hover {
+		display: none;
+	}
+
+	.case-card-default p {
+		font-size: 1.2rem;
+	}
 }
+
+
+
+.featured-work-actions {
+	display: flex;
+	justify-content: center;
+	gap: 0.9rem;
+	flex-wrap: wrap;
+	margin-top: 2rem;
+}
+
+
+
+
+
 
 
 	.center-cta {
@@ -735,29 +769,37 @@ import Header from '../components/Header.astro';
 		margin-top: 2rem;
 	}
 
-	.service-box {
+.service-box {
 	padding: 2rem 1.2rem 1.8rem;
-	border-top: 1px solid rgba(255, 255, 255, 0.28);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 	min-height: 170px;
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.service-box:hover {
+	transform: translateY(-2px);
+	opacity: 0.95;
 }
 
 .service-box h3 {
 	font-size: 1rem;
 	margin-bottom: 0.6rem;
+	color: #ffffff;
 }
 
 .service-box p {
 	font-size: 0.88rem;
 	line-height: 1.6;
 	max-width: 28ch;
+	color: rgba(255, 255, 255, 0.78); /* FIX */
 }
 
 
 
 	.featured-work {
-		padding-top: 6rem;
-		padding-bottom: 6rem;
+		padding-top: 6.5rem;
+		padding-bottom: 6.5rem;
 	}
 
 	.featured-work .section-heading {
@@ -812,14 +854,7 @@ import Header from '../components/Header.astro';
 		justify-self: start;
 	}
 
-	.work-grid {
-		grid-template-columns: 1fr 1fr;
-		grid-template-areas:
-			"featured featured"
-			"side1 side2"
-			"bottom1 bottom2"
-			"bottom3 bottom3";
-	}
+	
 	
 	.services-grid {
 		grid-template-columns: 1fr 1fr;
@@ -840,9 +875,7 @@ import Header from '../components/Header.astro';
 			grid-template-columns: 1fr;
 		}
 
-		.work-grid {
-		grid-template-columns: 1fr;
-	}
+	
 
 		h1 {
 			max-width: none;
@@ -1013,9 +1046,7 @@ import Header from '../components/Header.astro';
 		max-width: none;
 	}
 	
-	.work-grid {
-		grid-template-columns: 1fr;
-	}
+	
 }
 
 </style>
