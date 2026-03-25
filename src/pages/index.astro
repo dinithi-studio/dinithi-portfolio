@@ -234,8 +234,45 @@ import Header from '../components/Header.astro';
 				</div>
 			</section>
 		</main>
-
 		<Footer />
+		<script>
+			const caseCards = document.querySelectorAll('.case-card');
+
+			function isMobileView() {
+				return window.matchMedia('(max-width: 720px)').matches;
+			}
+
+			caseCards.forEach((card) => {
+				card.addEventListener('click', (event) => {
+					if (!isMobileView()) return;
+
+					if (!card.classList.contains('is-revealed')) {
+						event.preventDefault();
+
+						caseCards.forEach((otherCard) => {
+							if (otherCard !== card) otherCard.classList.remove('is-revealed');
+						});
+
+						card.classList.add('is-revealed');
+					}
+				});
+			});
+
+			document.addEventListener('click', (event) => {
+				if (!isMobileView()) return;
+
+				const clickedInsideCard = event.target.closest('.case-card');
+				if (!clickedInsideCard) {
+					caseCards.forEach((card) => card.classList.remove('is-revealed'));
+				}
+			});
+
+			window.addEventListener('resize', () => {
+				if (!isMobileView()) {
+					caseCards.forEach((card) => card.classList.remove('is-revealed'));
+				}
+			});
+		</script>
 	</body>
 </html>
 
@@ -727,12 +764,38 @@ import Header from '../components/Header.astro';
 		min-height: 280px;
 	}
 
-	.case-card-hover {
-		display: none;
-	}
-
 	.case-card-default p {
 		font-size: 1.2rem;
+	}
+
+	/* mobile default state */
+	.case-card-default {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.case-card-hover {
+		opacity: 0;
+		transform: translateY(8px);
+		pointer-events: none;
+	}
+
+	/* mobile tap-reveal state */
+	.case-card.is-revealed .case-card-default {
+		opacity: 0;
+		transform: translateY(-8px);
+	}
+
+	.case-card.is-revealed .case-card-hover {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+
+	.case-card.is-revealed .case-card-inner {
+		transform: translateY(-2px) scale(1.005);
+		box-shadow: 0 16px 30px rgba(43, 42, 40, 0.08);
+		filter: brightness(0.995);
 	}
 }
 
